@@ -1,0 +1,31 @@
+{
+  "name": "wp-netbook-theme",
+  "version": "1.0.0",
+  "description": "A study case for block-based themes.",
+  "main": "index.js",
+  "author": "Collaborar",
+  "license": "GPL-2",
+  "scripts": {
+    "start": "parcel watch",
+    "build": "parcel build"
+  },
+  "devDependencies": {
+    "@parcel/transformer-sass": "2.8.3",
+    "parcel": "^2.7.0",
+    "parcel-plugin-externals": "^0.5.2"
+  },
+  "targets": {
+		"editor": {
+      "source": "./assets/scripts/editor/index.js"
+    },
+    "frontend": {
+      "source": "./assets/scripts/frontend/index.js"
+    }
+  },
+  "editor": "dist/editor.js",
+  "frontend": "dist/frontend.js",
+  "alias": {
+    "@fonts/**": "./assets/fonts/$1",
+    "@styles/**": "./assets/styles/$1"
+  }
+}

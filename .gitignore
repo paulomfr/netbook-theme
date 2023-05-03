@@ -1,0 +1,18 @@
+# Commons
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+.idea
+
+# Vendors
+vendor
+node_modules
+
+# Build
+.parcel-cache
+yarn.lock
+dist
