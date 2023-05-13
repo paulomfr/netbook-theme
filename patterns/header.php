@@ -5,12 +5,12 @@
  * Categories: netbook-patterns, header
  */
 ?>
-<<!-- wp:group {"layout":{"type":"constrained"}} -->
+<!-- wp:group {"layout":{"type":"constrained"}} -->
 <div class="wp-block-group"><!-- wp:group {"align":"wide","style":{"spacing":{"padding":{"top":"0.94rem","bottom":"0.94rem"},"blockGap":"0"}},"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between"}} -->
 <div class="wp-block-group alignwide" style="padding-top:0.94rem;padding-bottom:0.94rem"><!-- wp:group {"style":{"spacing":{"blockGap":"72px"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
-<div class="wp-block-group"><!-- wp:site-logo {"width":143,"shouldSyncIcon":true} /-->
+<div class="wp-block-group"><!-- wp:site-logo {"width":143,"shouldSyncIcon":false} /-->
 
-<!-- wp:navigation {"ref":15,"style":{"spacing":{"blockGap":"36px"}}} /--></div>
+<!-- wp:navigation {"ref":15,"style":{"spacing":{"blockGap":"2.25rem"},"typography":{"fontSize":"0.88rem"}}} /--></div>
 <!-- /wp:group -->
 
 <!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap"}} -->

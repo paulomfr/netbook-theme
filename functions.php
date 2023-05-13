@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Netbook theme.
  * This file adds functions to the Netbook theme.
@@ -16,58 +17,57 @@
  */
 function netbook_setup()
 {
-  add_theme_support( 'wp-block-styles' );
-  // add_editor_style( 'dist/editor.css' );
+	add_theme_support('wp-block-styles');
 }
-add_action( 'after_setup_theme', 'netbook_setup' );
+add_action('after_setup_theme', 'netbook_setup');
 
 /**
  * Assets.
  */
 
 // Editor.
-function enqueue_editor()
+function netbook_enqueue_editor()
 {
-    $template_directory = get_template_directory_uri();
+	$template_directory = get_template_directory_uri();
 
-    // Register scripts.
-    wp_register_script(
-        'netbook.scripts.editor',
-        $template_directory . '/dist/editor.js',
-    );
+	// Register scripts.
+	wp_register_script(
+		'netbook.scripts.editor',
+		$template_directory . '/dist/editor.js',
+	);
 
-    wp_register_style(
-        'netbook.styles.editor',
-        $template_directory . '/dist/editor.css'
-    );
+	wp_register_style(
+		'netbook.styles.editor',
+		$template_directory . '/dist/editor.css'
+	);
 
-    // Enqueue scripts.
-    wp_enqueue_script( 'netbook.scripts.editor' );
-    wp_enqueue_style( 'netbook.styles.editor' );
+	// Enqueue scripts.
+	wp_enqueue_script('netbook.scripts.editor');
+	wp_enqueue_style('netbook.styles.editor');
 }
-add_action( 'enqueue_block_editor_assets', 'enqueue_editor' );
+// add_action( 'enqueue_block_editor_assets', 'netbook_enqueue_editor' );
 
 // Frontned.
-// function enqueue_frontend()
-// {
-//     $template_directory = get_template_directory_uri();
+function netbook_enqueue_frontend()
+{
+	$template_directory = get_template_directory_uri();
 
-//     // Register scripts.
-//     wp_register_script(
-//         'netbook.scripts.frontend',
-//         $template_directory . '/dist/editor.js',
-//     );
+	// Register scripts.
+	wp_register_script(
+		'netbook.scripts.frontend',
+		$template_directory . '/dist/editor.js',
+	);
 
-//     wp_register_style(
-//         'netbook.styles.frontend',
-//         $template_directory . '/dist/editor.css'
-//     );
+	wp_register_style(
+		'netbook.styles.frontend',
+		$template_directory . '/dist/editor.css'
+	);
 
-//     // Enqueue scripts.
-//     wp_enqueue_script( 'netbook.scripts.frontend' );
-//     wp_enqueue_style( 'netbook.styles.frontend' );
-// }
-// add_action( 'wp_enqueue_scripts', 'enqueue_frontend' );
+	// Enqueue scripts.
+	wp_enqueue_script('netbook.scripts.frontend');
+	wp_enqueue_style('netbook.styles.frontend');
+}
+// add_action( 'wp_enqueue_scripts', 'netbook_enqueue_frontend' );
 
 /**
  * Registers navigation menus.
@@ -76,10 +76,25 @@ add_action( 'enqueue_block_editor_assets', 'enqueue_editor' );
  */
 function netbook_register_menus()
 {
-  $locations = [
-    'primary' => __( 'Primary', 'netbook' )
-  ];
+	$locations = [
+		'primary' => __('Primary', 'netbook')
+	];
 
-  register_nav_menus( $locations );
+	register_nav_menus($locations);
 }
-add_action( 'after_setup_theme', 'netbook_register_menus' );
+add_action('after_setup_theme', 'netbook_register_menus');
+
+/**
+ * Register block related things.
+ */
+function netbook_register()
+{
+	// Block patterns categories.
+	register_block_pattern_category(
+		'netbook-patterns',
+		[
+			'label' => __('Netbook Patterns', 'netbook')
+		]
+	);
+}
+add_action('init', 'netbook_register');
