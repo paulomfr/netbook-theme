@@ -61,6 +61,16 @@
 							"fontDisplay": "block",
 							"fontFamily": "Inter",
 							"fontStyle": "normal",
+							"fontWeight": "500",
+							"src": [
+								"file:./assets/fonts/inter/Inter-Medium.woff",
+								"file:./assets/fonts/inter/Inter-Medium.woff2"
+							]
+						},
+						{
+							"fontDisplay": "block",
+							"fontFamily": "Inter",
+							"fontStyle": "normal",
 							"fontWeight": "700",
 							"src": [
 								"file:./assets/fonts/inter/Inter-Bold.woff",
@@ -106,7 +116,12 @@
 					}
 				},
 				"typography": {
-					"fontSize": "0.875rem"
+					"fontSize": "var(--wp--preset--font-size--sm)"
+				}
+			},
+			"link": { 
+				"typography": {
+					"textDecoration": "none"
 				}
 			}
 		},
@@ -138,7 +153,20 @@
 			},
 			"core/buttons": {
 				"css": "gap: 18px"
+			},
+			"core/navigation": {
+				"typography": {
+					"fontSize": "var(--wp--preset--font-size--sm)",
+					"fontWeight": "500"
+				}
 			}
 		}
-	}
+	},
+	"templateParts": [
+		{
+			"name": "header",
+			"title": "Header",
+			"area": "header"
+		}
+	]
 }
